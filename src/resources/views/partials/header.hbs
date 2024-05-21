@@ -1,0 +1,180 @@
+<header class="header d-flex jc-center">
+    <div class="container">
+        <nav class="d-flex ai-center jc-between pd--14-16">
+
+            <div class="d-flex ai-center">
+                <a href="/"><img src="/img/logo.png" alt="" srcset="" width="50"> </a>
+
+                <ul class="navbar-list">
+                    <li class="navbar-item pd--8-12">
+                        <a href="/"><span>Trang chủ </span></a>
+                        <div class="re-arrow"></div>
+                    </li>
+                    <li class="navbar-item pd--8-12">
+                        <a href="/"><span>Nhà đất cho thuê </span></a>
+                        <div class="re-arrow"></div>
+                    </li>
+
+                    <li class="navbar-item pd--8-12">
+                        <a href="/"><span>Tin tức </span></a>
+                        <div class="re-arrow"></div>
+                    </li>
+                    <li class="navbar-item pd--8-12">
+                        <a href="/"><span>Danh bạ </span></a>
+                        <div class="re-arrow"></div>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="d-flex ai-center">
+                <div class="btn btn-like">
+                    <i class="fa-regular fa-heart pd--14-16"></i>
+                </div>
+                <div class="box-login d-flex ai-center open">
+                    <div class="btn btn-login pd--14-16"> Đăng nhập</div>
+                    <span class="re-line"></span>
+                    <div class="btn btn-register pd--14-16"> Đăng ký</div>
+                </div>
+                <div class="box-user d-flex ai-center mr-8">
+                    <div class="btn btn-notify">
+                        <i class="fa-regular fa-bell pd--14-16"></i>
+                    </div>
+                    <div class="box-info d-flex ai-center ">
+                        <div class="user-avatar mr-4">
+                            <a href="" class="avatar">
+                                <img src="img/logo.png" alt="" width="">
+                            </a>
+                        </div>
+                        <div class="user-info mr-4">
+                            <a href="" class=""></a>
+                        </div>
+                        <div class="btn btn-more ">
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                    </div>
+                    <ul class="user-dropdown">
+                    <li class="nav-item"><a href=""><i class="fa-solid fa-earth-americas"></i>Tổng quan</a></li>
+                    <li class="nav-item"><a href=""><i class="fa-regular fa-address-card"></i>Quản lý tài khoản</a></li>
+                    <li class="nav-item"><a href=""><i class="fa-solid fa-list-check"></i>Quản lý tin đăng</a></li>
+                    <li class="nav-item"><a href=""><i class="fa-solid fa-clock-rotate-left"></i>Lịch sử xem tin</a></li>
+                    {{!-- <li class="nav-item"><a href="">Tổng quan</a></li> --}}
+                    <li class="nav-item"><a href=""><i class="fa-regular fa-credit-card"></i>Nạp điểm </a></li>
+                    <li class="nav-item"><a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i>Đăng xuất</a></li>
+
+                    </ul>
+                </div>
+                <a class="btn btn-posted pd--14-16"><i class="fa-regular fa-pen-to-square"></i> Đăng tin</a>
+            </div>
+
+        </nav>
+    </div>
+</header>
+
+<div class="modal-login modal jc-center">
+    <div class="contrainer d-flex ai-center">
+
+        <div class="form">
+            <button class="btn btn-close"><i class="fa-solid fa-xmark"></i></button>
+            <form action="user-login" class="form-login" id="form-1" method="post">
+                {{!-- <p class="desc-text">Xin chào bạn </p> --}}
+                <h3 class="heading-text mt-8">Đăng nhập </h3>
+
+                <div class="form-group mt-32">
+                    <label for="username" class="form-label">Tên đăng nhập</label>
+                    <input type="tel" id="username" name="username" placeholder="SDT hoặc email đăng ký"
+                           class="form-control">
+                    <span class="form-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Mật khẩu</label>
+                    <input type="password" id="password" name="password" placeholder="Mật khẩu" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+
+                <div class="forgot-password ">
+                    {{!-- <div class="d-flex ai-center">
+                        <input type="checkbox" id="password" name="password" placeholder="Mật khẩu"
+                               class="form-control mr-4">
+                        <span class="">Nhớ tài khoản</span>
+                    </div> --}}
+                    <a href="" class="">Quên mật khẩu?</a>
+                </div>
+                <button class="submit ">Đăng nhập</button>
+
+            </form>
+            <div class="d-flex ai-center mt-16">
+                <hr>
+                <span>Hoặc đăng nhập bằng</span>
+                <hr>
+            </div>
+            <button class="login-order d-flex jc-center ai-center"><img class="icon-button" src="/img/logo-gg.png"
+                     alt="" width="30"><span>
+                    Google
+                </span></button>
+            <div class="mt-16">
+                <span>Bạn chưa có tài khoản?</span>
+                <span href="" class="btn btn-register">Đăng ký</span>
+                <span>tại đây</span>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="modal-register modal d-flex jc-center">
+    <div class="contrainer d-flex">
+
+        <div class="form">
+            <button class="btn btn-close"><i class="fa-solid fa-xmark"></i></button>
+            <form action="user-regis" class="form-register" id="form-1" method="post">
+                {{!-- <p class="desc-text">Xin chào bạn </p> --}}
+                <h3 class="heading-text">Đăng ký </h3>
+                <div class="form-group mt-32">
+                    <label for="fullname" class="form-label">Họ và tên</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Họ và tên" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group ">
+                    <label for="username" class="form-label">Tên đăng nhập</label>
+                    <input type="text" id="username" name="username" placeholder="Số điện thoại" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Mật khẩu</label>
+                    <input  type="password" id="password" name="password" placeholder="Mật khẩu"
+                           class="form-control">
+                    <span class="form-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password" class="form-label">Xác nhận mật khẩu</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Nhập lại mật khẩu"
+                           class="form-control">
+                    <span class="form-message"></span>
+                </div>
+
+
+                <button class="submit">Đăng ký</button>
+
+            </form>
+            <div class="d-flex ai-center mt-16">
+                <hr>
+                <span>Đăng nhập</span>
+                <hr>
+            </div>
+            {{!-- <button class="login-order d-flex jc-center ai-center"><img class="icon-button" src="/img/logo-gg.png"
+                     alt="" width="30"><span>
+                    Google
+                </span></button> --}}
+            <div class="mt-16">
+                <span>Bạn đã có tài khoản?</span>
+                <span href="" class="btn btn-login">Đăng nhập </span>
+                <span>tại đây</span>
+            </div>
+
+        </div>
+
+    </div>
+</div>
