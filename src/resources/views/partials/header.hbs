@@ -1,9 +1,9 @@
 <header class="header d-flex jc-center">
     <div class="container">
-        <nav class="d-flex ai-center jc-between pd--14-16">
+        <nav class="d-flex ai-center jc-between pd--8-12">
 
             <div class="d-flex ai-center">
-                <a href="/"><img src="/img/logo.png" alt="" srcset="" width="50"> </a>
+                <a href="/"><img src="/img/logo1.png" alt="" srcset="" width="100" height="60"> </a>
 
                 <ul class="navbar-list">
                     <li class="navbar-item pd--8-12">
@@ -31,39 +31,48 @@
                 <div class="btn btn-like">
                     <i class="fa-regular fa-heart pd--14-16"></i>
                 </div>
+                {{!-- {{#if isLoggedIn}} --}}
+                <div class="box-user d-flex ai-center mr-8">
+                    <div class="btn btn-notify mr-8">
+                        <i class="fa-regular fa-bell pd--14-16"></i>
+                    </div>
+                    <div class="box-info d-flex ai-center ">
+                        <div class="user-avatar ">
+                            <a href="/" class="avatar">
+                                <img src="img/logo.png" alt="" width="">
+                            </a>
+                        </div>
+                        <div class="user-info ">
+                            <a href="/" class=""></a>
+                        </div>
+                        <div class="btn btn-more ">
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <ul class="user-dropdown">
+                            <li class="nav-item"><a href=""><i class="fa-solid fa-earth-americas"></i>Tổng quan</a></li>
+                            <li class="nav-item"><a href=""><i class="fa-regular fa-address-card"></i>Quản lý tài
+                                    khoản</a></li>
+                            <li class="nav-item"><a href=""><i class="fa-solid fa-list-check"></i>Quản lý tin đăng</a>
+                            </li>
+                            <li class="nav-item"><a href=""><i class="fa-solid fa-clock-rotate-left"></i>Lịch sử xem
+                                    tin</a></li>
+                            {{!-- <li class="nav-item"><a href="">Tổng quan</a></li> --}}
+                            <li class="nav-item"><a href=""><i class="fa-regular fa-credit-card"></i>Nạp điểm </a></li>
+                            <li class="nav-item"><a href="" class="btn-logout"><i
+                                       class="fa-solid fa-arrow-right-from-bracket"></i>Đăng
+                                    xuất</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                {{!-- {{else}} --}}
                 <div class="box-login d-flex ai-center open">
                     <div class="btn btn-login pd--14-16"> Đăng nhập</div>
                     <span class="re-line"></span>
                     <div class="btn btn-register pd--14-16"> Đăng ký</div>
                 </div>
-                <div class="box-user d-flex ai-center mr-8">
-                    <div class="btn btn-notify">
-                        <i class="fa-regular fa-bell pd--14-16"></i>
-                    </div>
-                    <div class="box-info d-flex ai-center ">
-                        <div class="user-avatar mr-4">
-                            <a href="" class="avatar">
-                                <img src="img/logo.png" alt="" width="">
-                            </a>
-                        </div>
-                        <div class="user-info mr-4">
-                            <a href="" class=""></a>
-                        </div>
-                        <div class="btn btn-more ">
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-                    </div>
-                    <ul class="user-dropdown">
-                    <li class="nav-item"><a href=""><i class="fa-solid fa-earth-americas"></i>Tổng quan</a></li>
-                    <li class="nav-item"><a href=""><i class="fa-regular fa-address-card"></i>Quản lý tài khoản</a></li>
-                    <li class="nav-item"><a href=""><i class="fa-solid fa-list-check"></i>Quản lý tin đăng</a></li>
-                    <li class="nav-item"><a href=""><i class="fa-solid fa-clock-rotate-left"></i>Lịch sử xem tin</a></li>
-                    {{!-- <li class="nav-item"><a href="">Tổng quan</a></li> --}}
-                    <li class="nav-item"><a href=""><i class="fa-regular fa-credit-card"></i>Nạp điểm </a></li>
-                    <li class="nav-item"><a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i>Đăng xuất</a></li>
-
-                    </ul>
-                </div>
+                {{!-- {{/if}} --}}
                 <a class="btn btn-posted pd--14-16"><i class="fa-regular fa-pen-to-square"></i> Đăng tin</a>
             </div>
 
@@ -109,10 +118,10 @@
                 <span>Hoặc đăng nhập bằng</span>
                 <hr>
             </div>
-            <button class="login-order d-flex jc-center ai-center"><img class="icon-button" src="/img/logo-gg.png"
-                     alt="" width="30"><span>
+            <a class="login-order d-flex jc-center ai-center" href="api/auth/google"><img class="icon-button"
+                     src="/img/logo-gg.png" alt="" width="30"><span>
                     Google
-                </span></button>
+                </span></a>
             <div class="mt-16">
                 <span>Bạn chưa có tài khoản?</span>
                 <span href="" class="btn btn-register">Đăng ký</span>
@@ -144,8 +153,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password" class="form-label">Mật khẩu</label>
-                    <input  type="password" id="password" name="password" placeholder="Mật khẩu"
-                           class="form-control">
+                    <input type="password" id="password" name="password" placeholder="Mật khẩu" class="form-control">
                     <span class="form-message"></span>
                 </div>
                 <div class="form-group">

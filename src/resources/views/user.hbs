@@ -1,0 +1,127 @@
+{{!-- {{>navbarUser}} --}}
+<div class="user d-flex jc-center">
+    <div class="navbar-user">
+        <div class="box-info d-flex ai-center ">
+            <div class="user-avatar col-33">
+                <a href="" class="avatar">
+                    <img src="{{data.anh_dai_dien}}" alt="" width="">
+                </a>
+            </div>
+            <div class="user-info col-66">
+                <a href="" class="">{{data.ten_nguoi_dung}}</a>
+                <span class="user-point">{{data.diem_vip}} điểm</span>
+            </div>
+        </div>
+        <div class="box-balance ">
+            <div class="content">
+                <h5 class="desc-text">Số dư tài khoản</h5>
+                <div class="d-flex jc-between mt-12 mb-8">
+                    <span>TK Chính</span>
+                    <span>0</span>
+                </div>
+                <div class="d-flex jc-between mb-8">
+                    <span>TK Khuyến mãi</span>
+                    <span>0</span>
+                </div>
+
+                <button class="btn btn-deposit pd--8-12 "><span>Nạp tiền</span></button>
+
+            </div>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item"><a href=""><i class="fa-solid fa-earth-americas"></i>Tổng quan</a></li>
+            <li class="nav-item"><a href=""><i class="fa-regular fa-address-card"></i>Quản lý tài
+                    khoản</a></li>
+            <li class="nav-item">
+                <a href=""><i class="fa-solid fa-list-check"></i>Quản lý tin đăng</a>
+                {{!-- <ul class="subnav">
+                    <li class="subnav-item">
+                        Đăng mới
+                    </li>
+                    <li class="subnav-item">
+                        Danh sách tin
+                    </li>
+                    <li class="subnav-item">
+                        Tin nháp
+                    </li>
+                </ul> --}}
+            </li>
+            <li class="nav-item"><a href=""><i class="fa-solid fa-clock-rotate-left"></i>Lịch sử xem
+                    tin</a></li>
+            {{!-- <li class="nav-item"><a href="">Tổng quan</a></li> --}}
+            <li class="nav-item"><a href=""><i class="fa-regular fa-credit-card"></i>Nạp điểm </a></li>
+            <li class="nav-item"><a href="" class="btn-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>Đăng
+                    xuất</a></li>
+        </ul>
+    </div>
+    <div class="box-content container d-flex jc-center ">
+        <div class="col-75">
+            <div class="form ">
+                <h2 class="title-text ">Quản lý tài khoản </h2>
+
+                <h3 class="heading-text mt-32">Thông tin cá nhân </h3>
+                <form action="/update-user?method=PUT" class="form-login d-flex form-info" id="form-1" method="post"
+                      enctype="multipart/form-data">
+                    {{!-- <p class="desc-text">Xin chào bạn </p> --}}
+                    <div class="form-group mt-16 ai-center col-100">
+                        <label for="avatar" class="form-label col-33"> <img src="{{data.anh_dai_dien}}" alt="">
+                        </label>
+                        <input type="file" id="avatar" name="avatar" accept="image/*" class="form-control"
+                               style="display: none;">
+                        <input type="hidden" id="old-avatar" name="old_avatar" value="{{data.anh_dai_dien}}">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group col-100 pd-h-12">
+                        <label for="fullname" class="form-label">Họ và tên</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Ví dụ: Nguyễn Văn A"
+                               class="form-control" value="{{data.ten_nguoi_dung}}">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group col-100">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Ví dụ: nguyenvana@gmail.com"
+                               class="form-control" value="{{data.email}}">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group col-100">
+                        <label for="phonenumber" class="form-label">Số điện thoại</label>
+                        <input type="tel" id="phonenumber" name="phonenumber" placeholder="" class="form-control"
+                               value="{{data.so_dien_thoai}}" {{!-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" --}}>
+                        <span class=" form-message"></span>
+                    </div>
+
+                    <div class="form-group col-50">
+                        <label for="gender" class="form-label">Chọn giới tính </label>
+                        <select type="password" id="gender" name="gender" class="form-control"
+                                value="{{data.gioi_tinh}}">
+                            <option value="">--Chọn giới tính--</option>
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                            <option value="Khác">Khác</option>
+                        </select>
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group col-50">
+                        <label for="birthday" class="form-label">Năm sinh</label>
+                        <input type="date" id="birthday" name="birthday" placeholder="dd-mm-yyyy" class="form-control"
+                               value="{{data.nam_sinh}}">
+                        <span class=" form-message"></span>
+                    </div>
+
+                    <div class="form-group col-100">
+                        <label for="address" class="form-label">Địa chỉ</label>
+                        <input type="tel" id="address" name="address" placeholder="" class="form-control"
+                               value="{{data.dia_chi}}">
+                        <span class=" form-message"></span>
+                    </div>
+
+                    <button class="submit ">Lưu thay đổi</button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
