@@ -1,0 +1,117 @@
+.peers {
+    box-sizing: border-box;
+    display: flex !important;
+    flex-flow: row wrap;
+    height: auto;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.peer {
+    display: block;
+    height: auto;
+    flex: 0 0 auto;
+}
+.peer-greed {
+    flex: 1 1 auto;
+}
+.sidebar {
+    width: 260px;
+    background-color: #f2f7fb;
+    bottom: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+
+    .sidebar-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-right: 1px solid #ddd;
+        background-color: #fff;
+        .sidebar-logo {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            display: flex;
+            .logo {
+                margin-right: 8px;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+            h3 {
+                display: inline-block;
+                flex-grow: 1;
+            }
+        }
+
+        .sidebar-menu {
+            overflow-y: auto;
+            .nav-item:first-child {
+                margin-top: 30px;
+            }
+            a {
+                line-height: 1.6;
+                font-size: 16px;
+            }
+
+            .nav-item {
+                .arrow {
+                    font-size: 12px;
+                    position: absolute;
+                    right: 30px;
+                    transform: rotate(-90deg);
+                    transition: all 0.05s ease-in;
+                }
+
+                .subnav {
+                    background-color: transparent;
+                    border-radius: 0;
+                    border: 0;
+                    box-shadow: none;
+                    float: none;
+                    padding-left: 50px;
+                    padding-top: 0;
+                    position: relative;
+                    display: none;
+                    width: 100%;
+                }
+                .subnav.open {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.sidebar.collapsed {
+    width: 60px;
+    .sidebar-logo .peer-greed,
+    .sidebar-menu .nav-item a span:not(.icon) {
+        display: none;
+    }
+}
+
+.main-content {
+    margin-top: 60px;
+    transition: margin-left 0.3s ease;
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    background: #f2f7fb;
+    .container {
+        margin-left: 260px;
+    }
+}
+.main-content div:first {
+    height: 100%;
+}
+
+.main-content.collapsed {
+    .container {
+        margin-left: 60px;
+    }
+}

@@ -1,0 +1,127 @@
+.header {
+    position: fixed;
+    z-index: 999;
+    border-bottom: solid 1px #ccc;
+    background-color: #fff;
+    right: 0;
+    left: 0;
+    top: 0;
+    a img {
+        height: 40px;
+        width: 60px;
+    }
+
+    .navbar-list .navbar-item {
+        display: inline-grid;
+        span {
+            font-weight: bold;
+            font-size: 14px;
+            color: #000;
+        }
+    }
+    .navbar-list .navbar-item:hover,
+    .navbar-list .navbar-item.active {
+        .re-arrow {
+            width: 100%;
+            transition: 0.3s;
+        }
+    }
+
+    .btn {
+        font-size: 14px;
+        border-radius: 6px;
+        font-weight: bold;
+        color: #2c2c2c;
+        padding: 10px;
+    }
+    .btn-like,
+    .btn-notify,
+    .btn-history-like,
+    .btn-message {
+        font-size: 20px;
+    }
+
+    .btn-posted {
+        border: solid 1px #f3dada;
+    }
+    .btn-posted:hover,
+    .btn-login:hover,
+    .btn-register:hover {
+        background-color: #f3dada;
+    }
+    .more-content,
+    .box-login {
+        display: none;
+    }
+    .box-login {
+        margin-right: 10px;
+    }
+
+    .more-content {
+        .desc-text {
+            margin-top: 0;
+        }
+        .box-balance {
+            padding: 16px;
+            background-color: #ebeff3;
+            border-radius: 6px;
+            width: 100%;
+            .item {
+                width: 100%;
+            }
+            .btn-deposit {
+                border: 1px solid rgba(182, 182, 182, 0.3);
+            }
+        }
+    }
+    .box-user {
+        display: none;
+        .box-info {
+            position: relative;
+            // .user-info,
+            .user-avatar img {
+                width: 32px;
+                height: 32px;
+                margin-right: 6px;
+            }
+        }
+
+        .box-info:hover ~ .user-dropdown {
+            display: block;
+        }
+        .user-dropdown {
+            display: none;
+            position: absolute;
+            top: 44px;
+            right: 8px;
+            background-color: #fff;
+            box-shadow: 0px 8px 20px rgba(182, 182, 182, 0.3);
+            border-radius: 4px;
+            width: 280px;
+            border: 1px solid #f3dada;
+            padding: 8px 0;
+
+            .nav-item {
+            }
+            .nav-item:hover {
+                background-color: #ffeceb;
+                border-radius: 4px;
+            }
+            .nav-item:last-child {
+                border-top: 1px solid #f3dada;
+                padding-top: 4px;
+            }
+        }
+        .user-dropdown.active {
+            display: block;
+        }
+    }
+    .box-login.open,
+    .box-user.open {
+        display: flex;
+    }
+}
+
+.toggle-button {
+    display: none;
+}

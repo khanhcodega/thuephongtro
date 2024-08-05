@@ -1,0 +1,132 @@
+<div class="admin-storeWards d-flex jc-center">
+    <div class="box-content container d-flex jc-center ">
+        <div class="col-100 mt-16">
+            <h2> Quản lý khu vực</h2>
+            <div class="d-flex jc-between mt-12">
+                <h3 class="title-text  mb-8 mt-16">
+                    Danh sách quận huyện
+                </h3>
+                <div class="search col-50 mt-16">
+                    <input type="text" placeholder="Nhập ít nhất 3 ký tự để tìm kiếm" class="" name="searchItemChat">
+                </div>
+
+                <div class="form col-100">
+                    <form action="" class="d-flex " id="form-1" method="post" enctype="multipart/form-data">
+
+                        <div class="form-group col-50">
+                            <label for="idWard" class="form-label">Mã số Quận/Huyện</label>
+                            <input type="number" id="idWard" name="idWard" placeholder="" class="form-control" value="">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group col-50 pd-h-12">
+                            <label for="city" class="form-label">Tỉnh/Thành phố</label>
+                            <select id="city" name="city" class="form-control" value="">
+                                <option value="">-- Chọn Tỉnh/TP --</option>
+                            </select>
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group col-50 pd-h-12">
+                            <label for="district" class="form-label">Quận/Huyện</label>
+                            <select id="district" name="district" class="form-control" value="">
+                                <option value="">-- Chọn Quận/Huyện --</option>
+                            </select>
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group col-50">
+                            <label for="nameWard" class="form-label">Tên Phường/Xã</label>
+                            <input type="text" id="nameWard" name="nameWard" placeholder="" class="form-control"
+                                   value="">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="d-flex col-100 event-form">
+                            <button type="button" class="btn  btn-add"><i class="fa fa-plus-square"></i>Thêm</button>
+                            <button type="button" class="btn  btn-edit"><i
+                                   class="fa fa-pencil-square-o"></i>Sửa</button>
+                            <button type="submit" class="btn  btn-save"><i
+                                   class="fa-solid fa-floppy-disk"></i>Lưu</button>
+                            {{!-- <button type="button" class="btn  btn-delete"><i
+                                   class="fa fa-trash-o"></i>Xóa</button> --}}
+                            <button type="reset" class="btn  btn-reset"><i class="fa fa-refresh"></i>Làm
+                                mới</button>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+            <div class="mt-32 col-100">
+
+                <div class=" table">
+                    <table class="contentWrapper">
+                        <thead>
+                            <tr>
+                                <th class="">#</th>
+                                <th class="">Mã phường xã</th>
+                                <th class="">Tên thành phố</th>
+                                <th class="">Tên quận huyện</th>
+                                <th class="">Tên phường xã</th>
+                                <th class="">Tổng số tin</th>
+                                <th class="">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+
+                            {{#each data}}
+                            <tr>
+                                <td>{{sum @index ../pagination.currentPage}}
+                                </td>
+                                <td>
+                                    <p class="text"> {{this.ma_so}}</p>
+                                </td>
+                                <td>
+                                    <p class="text">{{this.ten_thanh_pho}} </p>
+                                </td>
+                                <td>
+                                    <p class="text">{{this.ten_quan_huyen}} </p>
+                                </td>
+                                <td>
+                                    <p class="text">{{this.ten_phuong_xa}} </p>
+                                </td>
+                                <td>
+                                    <p class="text">{{this.tong_so_tin }}</p>
+                                </td>
+                                <td class="">
+                                    <div class="pd-4 col-50">
+
+                                        <a href="/admin/quan-ly-khu-vuc/get-ward/{{this.ma_so}}" class="btn btn-edit ">
+                                            <i class="fa-regular fa-pen-to-square"></i>Sửa</a>
+                                    </div>
+                                    <div class="pd-4 col-50">
+                                        <a href="{{this.ma_so}}" data-name="{{this.ten_quan_huyen}}"
+                                           class="btn btn-delete mt-5 "><i class="fa-solid fa-trash"></i>
+                                            Xóa</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{else}}
+                            <tr>
+                                <td colspan="5" class="text-center" style="display: table-cell;">
+                                    Chưa có thành phố nào.
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="d-flex jc-center mt-24 mb-32">
+
+                    <ul class="pagination" data-currentpage="{{pagination.currentPage}}"
+                        data-totalpage="{{pagination.totalPages}}">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{{>modalDelete}}

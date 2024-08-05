@@ -1,0 +1,47 @@
+<div class="modal-login modal jc-center">
+    <div class="contrainer d-flex ai-center">
+
+        <div class="form">
+            <button class="btn btn-close"><i class="fa-solid fa-xmark"></i></button>
+            <form action="user-login" class="form-login" id="form-1" method="post">
+                {{!-- <p class="desc-text">Xin chào bạn </p> --}}
+                <h3 class="heading-text mt-8">Đăng nhập </h3>
+
+                <div class="form-group mt-32">
+                    <label for="username" class="form-label">Tên đăng nhập</label>
+                    <input type="tel" id="username" name="username" placeholder="SDT hoặc email đăng ký"
+                           class="form-control">
+                    <span class="form-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Mật khẩu</label>
+                    <input type="password" id="password" name="password" placeholder="Mật khẩu" class="form-control">
+                    <span class="form-message"></span>
+                </div>
+
+                <div class="forgot-password ">
+                    <a href="" class="">Quên mật khẩu?</a>
+                </div>
+                <button class="submit ">Đăng nhập</button>
+
+            </form>
+            <div class="d-flex ai-center mt-16">
+                <hr>
+                <span>Hoặc đăng nhập bằng</span>
+                <hr>
+            </div>
+            <a class="login-order d-flex jc-center ai-center" href="/api/auth/google"><img class="icon-button"
+                     src="/img/logo-gg.png" alt="" width="30"><span>
+                    Google
+                </span></a>
+            <div class="mt-16">
+                <span>Bạn chưa có tài khoản?</span>
+                <span href="" class="btn btn-register">Đăng ký</span>
+                <span>tại đây</span>
+            </div>
+
+        </div>
+
+    </div>
+</div>

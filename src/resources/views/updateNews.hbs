@@ -1,0 +1,224 @@
+<div class="post-news d-flex jc-center">
+    <div class="container ">
+        <h1 class="title-text">Cập nhật tin</h1>
+        <div class="form ">
+            <form action="/quan-ly/quan-ly-tin/{{data.ma_so}}/edit?_method=PUT" class="d-flex form-updateNews form-createPost"
+                  id="form-1" method="post" enctype="multipart/form-data" data-id="{{data.ma_so}}">
+                <div class="col-30">
+                    <h3 class="heading-text">Hình ảnh và Video phòng trọ</h3>
+                    {{!-- <div> <span>Xem thêm về</span> <a href="">Quy tắc đăng tin</a></div> --}}
+                    <div class="form-group col-100 pd-h-12">
+                        {{!-- <i class="fa-solid fa-plus"></i> --}}
+                        <label for="listimage" class="form-label">
+
+                            <div class="box-image d-flex jc-center ai-center">
+
+                                <div class="icon-image">
+                                    <span class="span-text">
+                                        <i class="fa-solid fa-camera"></i>
+
+                                    </span>
+                                    <span class="span-text">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="file" name="images" id="listimage" multiple hidden accept="image/*"
+                               data-img="{{data.danh_sach_anh}}">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="imagePreview d-flex jc-arrow">
+                        {{#each images}}
+                        <div class="image-container" data-index="{{@index}}"><img src="/{{this}}">
+                            <div class="remove-btn" data-index="{{@index}}">×</div>
+                        </div>
+                        {{/each}}
+                    </div>
+
+                    <div class="form-group col-100 pd-h-12">
+                        {{!-- <i class="fa-solid fa-plus"></i> --}}
+                        <label for="video" class="form-label">
+
+                            <div class="box-image d-flex jc-center ai-center">
+
+                                <div class="icon-image">
+                                    <span class="span-text">
+                                        <i class="fa-solid fa-video"></i>
+                                    </span>
+                                    <span class="span-text">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="file" name="video" id="video" hidden data-video="{{data.video}}" accept="video/*">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="videoPreview d-flex jc-arrow">
+                        {{#if data.video}}
+                        <div class="video-container" data-video="{{data.video}}">                
+                            <video src="{{data.video}}" controls="controls"></video>
+                            <button type="button" class="remove-btn">×</button>
+                        </div>
+                        {{/if}}
+                    </div>
+
+
+                </div>
+                <div class="col-70 d-flex">
+                    <h3 class="heading-text ">Chuyên mục</h3>
+                    <div class="form-group col-100 pd-h-12">
+                        <label for="categorytype" class="form-label">Loại chuyên mục</label>
+                        <select type="text" id="categorytype" name="categorytype" class="form-control"
+                                value="{{data.ma_chuc_nang}}">
+                            <option value="">-- Chọn loại chuyên mục --</option>
+
+                        </select>
+                        <span class="form-message"></span>
+                    </div>
+                    <h3 class="heading-text ">Địa chỉ cho thuê</h3>
+
+                    <div class="form-group col-33 pd-h-12">
+                        <label for="city" class="form-label">Tỉnh/Thành phố</label>
+                        <select type="password" id="city" name="city" class="form-control"
+                                value="{{data.ma_thanh_pho}}">
+                            <option value="">-- Chọn Tỉnh/TP --</option>
+                        </select>
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group col-33 pd-h-12">
+                        <label for="district" class="form-label">Quận/Huyện</label>
+                        <select type="password" id="district" name="district" class="form-control"
+                                value="{{data.ma_quan_huyen}}">
+                            <option value="">-- Chọn Quận/Huyện --</option>
+                        </select>
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group col-33 pd-h-12">
+                        <label for="ward" class="form-label">Phường/Xã</label>
+                        <select type="password" id="ward" name="ward" class="form-control"
+                                value="{{data.ma_phuong_xa}}">
+                            <option value="">-- Chọn Phường/Xã --</option>
+                        </select>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group col-100">
+                        <label for="nameroad" class="form-label">Tên đường</label>
+                        <input type="text" id="nameroad" name="nameroad" placeholder="" class="form-control" value="">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group col-100">
+                        <label for="homenumber" class="form-label">Số nhà</label>
+                        <input type="text" id="homenumber" name="homenumber" placeholder="" class="form-control"
+                               value="">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group col-100">
+                        <label for="fulladdress" class="form-label">Địa chỉ chính xác</label>
+                        <input type="text" id="fulladdress" name="fulladdress" placeholder="" class="form-control"
+                               value="{{data.dia_chi_cu_the}}" readonly>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <h3 class="heading-text ">Thông tin đặc điểm </h3>
+                    <div class="form-group col-50 pd-h-12">
+                        <label for="interior" class="form-label">Tình trạng nội thất</label>
+                        <select id="interior" name="interior" class="form-control" value="{{moreInfo.interior}}">
+                            <option value="">-- Chọn tình trạng --</option>
+                            <option value="Nội thất cao cấp">Nội thất cao cấp</option>
+                            <option value="Nội thất cơ bản">Nội thất cơ bản</option>
+                            <option value="Nhà trống">Nhà trống</option>
+                        </select>
+                        <span class="form-message"></span>
+                    </div>
+
+
+                    <div class="form-group col-50">
+                        <label for="floor" class="form-label">Số tầng</label>
+                        <input type="number" min="0" id="floor" name="floor" placeholder="" class="form-control"
+                               value="{{moreInfo.floor}}">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group col-50">
+                        <label for="bedroom" class="form-label">Số phòng ngủ</label>
+                        <input type="number" min="0" id="bedroom" name="bedroom" placeholder="" class="form-control"
+                               value="{{moreInfo.bedroom}}">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group col-50">
+                        <label for="toilet" class="form-label">Số phòng toilet</label>
+                        <input type="number" min="0" id="toilet" name="toilet" placeholder="" class="form-control"
+                               value="{{moreInfo.toilet}}">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group col-50">
+                        <label for="people" class="form-label">Số người</label>
+                        <input type="number" min="0" id="people" name="people" placeholder="" class="form-control"
+                               value="{{moreInfo.people}}">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group col-50 pd-h-12">
+                        <label for="object" class="form-label">Đối tượng cho thuê</label>
+                        <select id="object" name="object" class="form-control" value="">
+                            <option value="">-- Chọn đối tượng --</option>
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                            <option value="Không">Không</option>
+                        </select>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <h3 class="heading-text ">Diện tích và giá tiền</h3>
+                    <div class="form-group col-100">
+                        <label for="area" class="form-label">Diện tích</label>
+                        <input type="number" min="0" id="area" name="area" placeholder="" class="form-control"
+                               value="{{data.dien_tich}}">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group col-100">
+                        <label for="price" class="form-label">Giá thuê</label>
+                        <input type="number" min="0" id="price" name="price" placeholder="" class="form-control"
+                               value="{{data.gia_tien}}">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group col-100">
+                        <label for="deposit" class="form-label">Số tiền cọc</label>
+                        <input type="number" min="0" id="deposit" name="deposit" placeholder="" class="form-control"
+                               value="{{moreInfo.deposit}}">
+                        <span class="form-message"></span>
+                    </div>
+                    <h3 class="heading-text ">Tiêu đê tin và Mô tả chi tiết </h3>
+                    <div class="form-group col-100">
+                        <label for="titleNews" class="form-label">Tiêu đề tin đăng</label>
+                        <input type="text" min="0" id="titleNews" name="titleNews" placeholder="" class="form-control"
+                               value="{{data.tieu_de}}">
+                        <span class="form-message"></span>
+                    </div>
+                    <div class="form-group col-100">
+                        <label for="descNews" class="form-label">Mô tả chi tiết</label>
+                        <textarea type="" min="0" id="descNews" name="descNews" placeholder="" class="form-control"
+                                  value="{{data.noi_dung}}" rows="6" cols="50"></textarea>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class=" col-50">
+                        <button class="submit  btn  btn-review">Xem trước</button>
+                    </div>
+                    <div class=" col-50">
+                        <button type="submit" class="submit  btn  ">Cập nhật</button>
+                    </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+</div>
+<script src="/javascript/jquery-3.7.1.min.js"></script>
+<script src="/javascript/postNews.js"></script>

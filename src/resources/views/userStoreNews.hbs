@@ -1,0 +1,104 @@
+<div class="user d-flex jc-center">
+    {{>navbarUser}}
+
+    <div class="box-content container d-flex jc-center ">
+        <div class="col-100">
+
+            <div class="mt-16">
+                <h2> Quản lý tin đăng</h2>
+                <div class="d-flex jc-between mt-12">
+
+                    <h3 class="title-text  mb-8 mt-16">Danh sách tin tức </h3>
+                    <select id="status" data-status="{{trang_thai}}">
+                        <option value="">Tất cả tin</option>
+                        <option value="approved">Tin đã được duyệt</option>
+                        <option value="wait">Tin chờ duyệt</option>
+                        <option value="draft">Tin nháp</option>
+                    </select>
+                </div>
+
+                <div class="mt-12 data">
+                    <table class="contentWrapper">
+                        <thead>
+                            <tr>
+                                <th class="">#</th>
+                                <th class="">Ảnh đại diện</th>
+                                <th class="">Tiêu đề</th>
+                                <th class="">Giá tiền</th>
+                                <th class="">Thời gian thêm</th>
+                                <th class="">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {{#each data}}
+                            <tr>
+                                <td>{{sum @index 1}}
+                                </td> <!-- This will automatically generate the row index -->
+                                <td>
+                                    <img src="{{this.firstImage}}" alt="" srcset="">
+                                </td>
+                                <td>
+                                    <p class="text"> {{this.tieu_de}}</p>
+                                </td>
+                                <td>
+                                    <p class="text">{{this.formattedPrice}}</p>
+                                </td>
+                                <td>
+                                    <p class="text">{{this.ngay_them }}</p>
+                                </td>
+                                <td class="">
+                                    <div class="pd-4 col-100">
+                                        <a href="/quan-ly/quan-ly-tin/{{this.ma_so}}" class="btn btn-edit "><i
+                                               class="fa-regular fa-pen-to-square"></i> Sửa</a>
+                                    </div>
+                                    <div class="pd-4 col-100">
+                                        <a href="{{this.ma_so}}" data-name="{{this.tieu_de}}"
+                                           class="btn btn-delete mt-5"><i class="fa-solid fa-trash"></i> Xóa</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{else}}
+                            <tr>
+                                <td colspan="5" class="text-center">
+                                    Bạn chưa đăng tin nào. <a href="/dang-tin">Tạo tin tại đây.
+                                    </a>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+
+                    {{#if data}}
+                    <div class="d-flex jc-center mt-24 mb-32">
+
+                        <ul class="pagination" data-currentpage="{{pagination.currentPage}}"
+                            data-totalpage="{{pagination.totalPages}}">
+
+                        </ul>
+                    </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="id01" class="modal ">
+    <span onclick="document.getElementById('id01').style.display=''" class="close" title="Close Modal">&times;</span>
+    <div class="d-flex jc-center">
+
+        <div class="container d-flex jc-center ">
+            <form class="modal-content text-center " action="" method="post">
+                <h2>Xóa bài viết</h2>
+
+                <p class="text mt-12">Bạn có chắc chắn muốn xóa </p>
+
+                <div class="clearfix d-flex jc-center">
+                    <button type="button" class="col-40 cancelbtn btn">Hủy</button>
+                    <button type="submit" class="col-40 deletebtn btn">Xóa bỏ</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

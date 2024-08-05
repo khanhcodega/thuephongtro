@@ -1,0 +1,138 @@
+<div class=" container d-flex jc-center">
+    <div class="current-new d-flex  col-75  bg-blue content-main">
+        <button class="btn btn-close"><i class="fa fa-times"></i></button>
+        <div class="content bg-blue item-content col-100" data-news="{{data.ma_so}}" data-da-like="{{data.da_like}}">
+
+            <div class="images-news">
+                <div class="image-current">
+                    <img src="{{images.[0]}}" alt="" id="main-image">
+                </div>
+                <div class="image-review ">
+                    <div class=" d-flex jc-arrow owl-carousel">
+                        {{#each images}}
+                        <div class="item">
+                            <img src="{{this}}" alt="" class="carousel-image">
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="heading">
+                <span class="span-text  mt-16">Cho thuê/ {{diaLyData.ten_thanh_pho}}/ {{diaLyData.ten_quan_huyen}}/
+                    <span class="dark-text">Nhà trọ, phòng trọ tại {{sonha}}</span>
+                </span>
+                <h2 class="title-text mt-12">{{data.tieu_de}}</h2>
+                <span class="span-text  mt-12">Cho thuê/ {{diaLyData.ten_thanh_pho}}/ {{diaLyData.ten_quan_huyen}}/
+                    <span class="dark-text">Nhà trọ, phòng trọ tại {{sonha}}</span></span>
+            </div>
+
+            <div class="info-base d-flex jc-between mt-16">
+                <div class="description d-flex">
+                    <div class="item">
+                        <span class="span-text">Mức giá</span>
+                        <span class="desc-text">{{formattedPrice}} triệu/tháng
+
+                        </span>
+                    </div>
+                    <div class="item">
+                        <span class="span-text">Diện tích</span>
+                        <span class="desc-text">{{data.dien_tich}} m²
+                        </span>
+                    </div>
+                    <div class="item">
+                        <span class="span-text">Phòng ngủ</span>
+                        <span class="desc-text">{{noiDungThem.bedroom}} Phòng ngủ
+                        </span>
+                    </div>
+                </div>
+
+                <div class="action d-flex ai-center">
+                    <div class="btn btn-share">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+                    <div class="btn btn-warning">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="btn btn-like">
+                        {{#if data.da_like}}
+                        <i class="fa-solid fa-heart"></i>
+                        {{else}}
+                        <i class="fa-regular fa-heart"></i>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+            <div class="desc-details">
+                <h3 class="heading-text">Thông tin mô tả</h3>
+                <div class="content mt-12">
+
+                    {{{noi_dung}}}
+
+                </div>
+                <div class="contact mt-12">
+
+                    <span>Liên hệ: </span>
+                    <span>{{data.so_dien_thoai}}</span>
+                    <span class="">·</span>
+                    <button class="btn-phone btn pd--8-12 mr-8"> Hiện số</button>
+
+                </div>
+            </div>
+            <div class="features  ">
+                <h3 class="heading-text">Đặc điểm phòng trọ</h3>
+                <div class="d-flex">
+
+                    <div class="item col-50  d-flex ">
+                        <span class="span-text"><i class="fa-solid fa-expand"></i> Diện tích</span>
+                        <span class="span-text">{{data.dien_tich}} m²</span>
+                    </div>
+                    <div class="item col-50  d-flex ">
+
+                        <span class="span-text"><i class="fa-solid fa-money-check-dollar"></i> Mức giá</span>
+                        <span class="span-text">{{formattedPrice}} triệu/tháng</span>
+                    </div>
+                    <div class="item col-50  d-flex ">
+
+                        <span class="span-text"><i class="fa-solid fa-city"></i> Số tầng</span>
+                        <span class="span-text">{{noiDungThem.floor}} tầng</span>
+                    </div>
+                    <div class="item col-50  d-flex ">
+
+                        <span class="span-text"><i class="fa-solid fa-bed"></i> Số phòng ngủ</span>
+                        <span class="span-text">{{noiDungThem.bedroom}} phòng</span>
+                    </div>
+                    <div class="item col-50  d-flex ">
+
+                        <span class="span-text"><i class="fa-solid fa-bath"></i> Số toilet</span>
+                        <span class="span-text">{{noiDungThem.toilet}} phòng</span>
+                    </div>
+                    <div class="item col-50  d-flex ">
+
+                        <span class="span-text"><i class="fa-solid fa-expand"></i> Nội thất</span>
+                        <span class="span-text">{{noiDungThem.interior}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="map" data-map="{{data.dia_chi_cu_the}}">
+                <div id="mapContainer"></div>
+            </div>
+
+        </div>
+
+    </div>
+    {{#if (eq data.trang_thai "wait")}}
+    <div class="d-flex jc-center col-100 mt-8">
+        <div class="container d-flex jc-center ">
+            <form class="modal-content text-center " action="/admin/quan-ly-tin/{{data.ma_so}}/update?_method=PUT"
+                  method="post">
+                <div class="d-flex jc-center">
+                    <button type="submit" class="col-40 approvedbtn btn">Duyệt bài viết</button>
+                    <button type="button" class="col-40 cancelbtn btn">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {{/if}}
+
+</div>
+

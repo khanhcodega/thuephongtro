@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/14826bfcac.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/owlcarousel/assets/owl.theme.default.min.css">
+
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"></script>
+    {{!--
+    <link rel="stylesheet" href="/css/app.css"> --}}
+<link rel="shortcut icon" type="image/png" href="/img/logo2.png"/>
+    <link rel="stylesheet" href="/css/admin.css">
+
+
+    <script src="/javascript/jquery-3.7.1.min.js"></script>
+    <script src="/assets/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/javascript/validate.js"></script>
+    <title>Quản lý</title>
+</head>
+
+<body>
+
+
+    {{>headerAdmin}}
+    {{>sidebarAdmin}}
+
+    <div class="main-content" id="main-content">
+        {{{body}}}
+    </div>
+
+<div id="toast"></div>
+    <div class="modal-container "></div>
+    <script src="/javascript/admin/admin.js"></script>
+    <script src="/javascript/ui/admin.js"></script>
+    {{!-- <script src="/javascript/map.js"></script> --}}
+
+</body>
+
+</html>

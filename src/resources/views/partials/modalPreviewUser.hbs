@@ -1,0 +1,71 @@
+<div class="info-user container d-flex jc-center">
+    <div class="d-flex  col-75  bg-blue content-main">
+        <button class="btn btn-close"><i class="fa-solid fa-xmark"></i></button>
+        <div class="content bg-blue item-content col-100 ">
+
+            <div class="avatar d-flex jc-center">
+                {{#if data.anh_dai_dien}}
+                <img src="{{data.anh_dai_dien}}" alt="" srcset="">
+                {{else}}
+                <img src="/img/avatar.png" alt="" srcset="">
+                {{/if}}
+            </div>
+            <h2 class="text-center mt-12">Thông tin người dùng</h2>
+            <div class="mt-12 info ">
+                <div class="mt-8 d-flex col-100 ">
+                    <span class="heading-text col-30">Họ và tên :</span>
+                    <span class="decs-text col-70"> {{data.ten_nguoi_dung}}</span>
+                </div>
+                <div class="mt-8 d-flex col-100 ">
+                    <span class="heading-text col-30">Số điện thoại :</span>
+                    <span class="decs-text col-70"> {{#if data.so_dien_thoai}}
+                        {{data.so_dien_thoai}}
+                        {{else}}
+                        Chưa thêm số điện thoại.
+                        {{/if}}
+                    </span>
+                </div>
+                <div class="mt-8 d-flex col-100 ">
+                    <span class="heading-text col-30">Email :</span>
+                    <span class="decs-text col-70">
+                        {{#if data.email}}
+                        {{data.email}}
+                        {{else}}
+                        Chưa thêm số email.
+                        {{/if}}
+                    </span>
+                </div>
+                <div class="mt-8 d-flex col-100 ">
+                    <span class="heading-text col-30">Giới tính :</span>
+                    <span class="decs-text col-70">
+                        {{#if data.gioi_tinh}}
+                        {{data.gioi_tinh}}
+                        {{else}}
+                        Chưa xác định.
+                        {{/if}} </span>
+                </div>
+                <div class="mt-8 d-flex col-100 ">
+                    <span class="heading-text col-30">Năm sinh :</span>
+                    <span class="decs-text col-70">
+                        {{#if data.nam_sinh}}
+                        {{data.nam_sinh}}
+                        {{else}}
+                        Chưa xác định.
+                        {{/if}} </span>
+                </div>
+                <div class="mt-8 d-flex col-100 ">
+                    <span class="heading-text col-30">Địa chỉ :</span>
+                    <span class="decs-text col-70">{{#if data.dia_chi}}
+                        {{data.dia_chi}}
+                        {{else}}
+                        Chưa thêm địa chỉ.
+                        {{/if}}</span>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

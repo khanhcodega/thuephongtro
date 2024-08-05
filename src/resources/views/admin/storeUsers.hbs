@@ -1,0 +1,101 @@
+<div class="admin-storeUsers d-flex jc-center">
+    <div class="box-content container d-flex jc-center ">
+        <div class="col-100 mt-16">
+            <h2> Quản lý người dùng</h2>
+            <div class="d-flex jc-between mt-12">
+                <h3 class="title-text  mb-8 mt-16">Danh sách người dùng</h3>
+
+                <div class="search col-50 mt-16">
+                    <input type="text" placeholder="Nhập ít nhất 3 ký tự để tìm kiếm" class="" name="searchItemChat">
+                </div>
+
+            </div>
+
+            <div class="col-100 mt-32">
+                <div class=" table">
+                    <table class="contentWrapper">
+                        <thead>
+                            <tr>
+                                <th class="">#</th>
+                                <th class="">Ảnh đại diện</th>
+                                <th class="">Tên người dùng</th>
+                                <th class="">Tin đăng thành công</th>
+                                <th class="">Tin đăng chưa duyệt</th>
+                                <th class="">Đánh giá</th>
+                                {{!-- <th class="">điểm vip</th> --}}
+                                <th class="">Thời gian tham gia</th>
+                                <th class="">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {{#each data}}
+                            <tr>
+                                <td>{{sum @index ../pagination.currentPage}}
+                                </td>
+                                <td>
+                                    {{#if this.anh_dai_dien}}
+                                    <img src="{{this.anh_dai_dien}}" alt="" srcset="">
+                                    {{else}}
+                                    <img src="/img/avatar.png" alt="" srcset="">
+                                    {{/if}}
+                                </td>
+                                <td>
+                                    <p class="text"> {{this.ten_nguoi_dung}}</p>
+                                </td>
+                                <td>
+                                    <p class="text">{{this.so_bai_viet_da_duyet}} </p>
+                                </td>
+                                <td>
+                                    <p class="text">{{this.so_bai_viet_chua_duyet}} </p>
+                                </td>
+                                <td>
+                                    <p class="text">
+                                        {{#if this.trung_binh_danh_gia}}
+                                        {{this.trung_binh_danh_gia}}
+                                        {{else}}
+                                        Chưa có đánh giá
+                                        {{/if}}
+                                    </p>
+                                </td>
+                                {{!-- <td>
+                                    <p class="text">{{this.diem_v}} </p>
+                                </td> --}}
+                                <td>
+                                    <p class="text">{{this.formattedDate }}</p>
+                                </td>
+                                <td class="">
+                                    <div class="pd-4 col-50">
+
+                                        <a href="/admin/quan-ly-nguoi_dung/{{this.ma_so}}" class="btn btn-preview ">
+                                            <i class="fa-solid fa-eye"></i> Xem</a>
+                                    </div>
+                                    <div class="pd-4 col-50">
+                                        <a href="{{this.ma_so}}" data-name="{{this.ten_nguoi_dung}}"
+                                           class="btn btn-delete mt-5"><i class="fa-solid fa-trash"></i> Xóa</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{else}}
+                            <tr>
+                                <td colspan="5" class="text-center" style="display: table-cell;">
+                                    Không có người dùng nào.
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex jc-center mt-24 mb-32">
+
+                    <ul class="pagination" data-currentpage="{{pagination.currentPage}}"
+                        data-totalpage="{{pagination.totalPages}}">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{>modalDelete}}

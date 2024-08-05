@@ -1,0 +1,94 @@
+<div class="admin-storeNews d-flex jc-center">
+
+    <div class="box-content container d-flex jc-center ">
+        <div class="col-100 mt-16">
+
+            <h2> Quản lý tin tức</h2>
+            <div class="d-flex jc-between mt-12">
+                <h3 class="title-text  mb-8 mt-16">
+                    {{#if (eq trang_thai "approved")}}
+                    Danh sách tin tức đã duyệt
+                    {{else}}
+                    Danh sách tin tức chưa duyệt
+                    {{/if}}
+                </h3>
+                <div class="search col-50 mt-16">
+                    <input type="text" placeholder="Nhập ít nhất 3 ký tự để tìm kiếm" class="" name="searchItemChat">
+                </div>
+
+            </div>
+
+            <div class="mt-32 col-100">
+
+                <div class="mt-12 table">
+                    <table class="contentWrapper">
+                        <thead>
+                            <tr>
+                                <th class="">#</th>
+                                <th class="">Ảnh đại diện</th>
+                                <th class="">Tiêu đề</th>
+                                <th class="">Giá tiền</th>
+                                <th class="">Thời gian thêm</th>
+                                <th class="">Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {{#each data}}
+                            <tr>
+                                <td>{{sum @index ../pagination.currentPage}}
+
+                                </td> <!-- This will automatically generate the row index -->
+                                <td>
+                                    <img src="{{this.firstImage}}" alt="" srcset="">
+                                </td>
+                                <td>
+                                    <p class="text"> {{this.tieu_de}}</p>
+                                </td>
+                                <td>
+                                    <p class="text">
+                                        {{#if this.formattedPrice}}
+                                        {{this.formattedPrice}} vnđ
+                                        {{else}}
+                                        Giá thảo thuận
+                                        {{/if}}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="text">{{this.formattedDate }}</p>
+                                </td>
+                                <td class="">
+                                    <div class="pd-4 col-50">
+
+                                        <a href="/admin/quan-ly-tin/{{this.ma_so}}" class="btn btn-preview ">
+                                            <i class="fa-solid fa-eye"></i> Xem</a>
+                                    </div>
+                                    <div class="pd-4 col-50">
+                                        <a href="{{this.ma_so}}" data-name="{{this.tieu_de}}"
+                                           class="btn btn-delete mt-5"><i class="fa-solid fa-trash"></i> Xóa</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{else}}
+                            <tr>
+                                <td colspan="6" class="text-center" style="display: table-cell;">
+                                    Không có tin tức nào.
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex jc-center mt-24 mb-32">
+
+                    <ul class="pagination" data-currentpage="{{pagination.currentPage}}"
+                        data-totalpage="{{pagination.totalPages}}">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{>modalDelete}}

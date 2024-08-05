@@ -1,0 +1,54 @@
+<div class="col-70 chat-main">
+    {{#if data}}
+    <div class="btn btn-repage">
+        <i class="fa-solid fa-angle-left"></i>
+    </div>
+    <div class="col-100">
+        
+        <div class="d-flex item ">
+            <img src="{{dataInfo.anh_dai_dien}}" alt="" srcset="" class="">
+            <div class="pd--6-8 ">
+                <span class="span-text bolder text">{{dataInfo.ten_nguoi_dung}} </span>
+
+                <span class="span-text ">Hoặt động 1 ngay trước</span>
+            </div>
+        </div>
+
+        <div class="d-flex item">
+            <img src="{{dataInfo.firstImage}}" alt="" srcset="" class="">
+            <div class="pd--6-8 ">
+                <span class="span-text bolder text">{{dataInfo.tieu_de}}{{dataInfo.tieu_de}}</span>
+                <span class="span-text  red-text">
+                    {{#if dataInfo.formattedPrice}}
+                    {{dataInfo.formattedPrice}} triệu/tháng
+                    {{else}}
+                    Giá thỏa thuận
+                    {{/if}}
+                    -
+                    {{dataInfo.ten_quan_huyen}}, {{dataInfo.ten_thanh_pho}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="chat-box">
+        {{#each dataMainChat}}
+        {{#if this.noi_dung_binh_luan}}
+        {{#if (eq this.role "sender")}}
+        <div class="message user-chat">{{this.noi_dung_binh_luan}}</div>
+        {{else}}
+        <div class="message reply">{{this.noi_dung_binh_luan}}</div>
+        {{/if}}
+        {{/if}}
+        {{/each}}
+
+    </div>
+
+    <div class="chat-message">
+        <input type="text" placeholder="Nhập để nhắn tin" class="" name="message">
+        <button>
+            <i class="fa-solid fa-paper-plane"></i>
+        </button>
+    </div>
+    {{else}}
+        <h3 class="text-center">Hiện chưa có tin nhắn nào</h3>
+    {{/if}}
+</div>

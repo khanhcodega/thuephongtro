@@ -1,0 +1,87 @@
+// @import '../app.scss';
+@import '../common.scss';
+@import '../component/';
+@import './table';
+@import './header.scss';
+@import './sidebar.scss';
+
+.login-admin {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background: url('/img/background.png') no-repeat center center;
+    background-size: cover;
+}
+.form {
+    box-shadow:
+        0 0 5px 0 rgba(43, 43, 43, 0.1),
+        0 11px 6px -7px rgba(43, 43, 43, 0.1);
+    margin: 0;
+}
+.event-form {
+    // margin-right: 5px;
+    border: none;
+    // padding: 8px 16px;
+    margin-top: 12px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: auto;
+    justify-content: end;
+    .btn {
+        width: 120px;
+        outline: none;
+        color: white;
+        background-color: #1dbfaf;
+        margin-top: 12px;
+        padding: 12px 16px;
+        font-weight: 600;
+        border: none;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 4px;
+        i {
+            margin-right: 8px;
+        }
+    }
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 5px 18px;
+    text-align: center;
+    color: #fff;
+}
+.card-cornflowerblue {
+    background-color: cornflowerblue;
+}
+.card-cadetblue {
+    background-color: cadetblue;
+}
+.card-tomato {
+    background-color: tomato;
+}
+.card-slategrey {
+    background-color: slategrey;
+}
+.card-title {
+    width: 100%;
+}
+.card-text {
+    margin: 16px 0;
+}
+.card-footer {
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+@import './breakpoints.scss';

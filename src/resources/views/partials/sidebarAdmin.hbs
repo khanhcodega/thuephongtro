@@ -1,0 +1,137 @@
+<div class="sidebar">
+
+  <div class="sidebar-inner">
+    
+    <a class="sidebar-logo peers  ai-center" href="/admin/dashboard">
+      <div class="logo peer ">
+        <img src="/img/logo.png" alt="" width="">
+      </div>
+      <div class="peer peer-greed ">
+        <h3>Quản lý</h3>
+      </div>
+    </a>
+
+    <ul class="sidebar-menu">
+      <li class="nav-item">
+        <a href="/admin/dashboard" class="link">
+          <span class="icon">
+            <i class="fa-solid fa-house"></i>
+          </span>
+          <span>
+            Tổng quan
+          </span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="/admin/quan-ly-nguoi_dung" class="link">
+          <span class="icon">
+            <i class="fa-solid fa-users"></i>
+          </span>
+          <span class="title">
+            Quản lý người dùng
+          </span>
+        </a>
+      </li>
+      <li class="nav-item dropdown ">
+        <a href="">
+          <span class="icon">
+            <i class="fa-regular fa-newspaper"></i>
+          </span>
+          <span class="title">
+            Quản lý tin tức
+          </span>
+          <span class="arrow">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </a>
+        <ul class="subnav ">
+          <li class="subnav-item">
+            <a href="/admin/quan-ly-tin?status=approved" class="link">Tin đã duyệt</a>
+          </li>
+          <li class="subnav-item">
+            <a href="/admin/quan-ly-tin?status=wait" class="link">Tin chưa duyệt</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="">
+          <span class="icon">
+            <i class="fa-solid fa-map-location-dot"></i>
+          </span>
+          <span class="title">
+            Quản lý khu vực
+          </span>
+          <span class="arrow">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+        </a>
+        <ul class="subnav">
+          <li class="subnav-item">
+            <a href="/admin/quan-ly-khu-vuc/thanh-pho" class="link">Danh sách thành phố</a>
+          </li>
+          <li class="subnav-item">
+            <a href="/admin/quan-ly-khu-vuc/quan-huyen" class="link">Danh sách quận/huyện</a>
+          </li>
+          <li class="subnav-item">
+            <a href="/admin/quan-ly-khu-vuc/phuong-xa" class="link">Danh sách phường/xã</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="link" href="/admin/quan-ly-danh-muc">
+          <span class="icon">
+            <i class="fa fa-book"></i>
+          </span>
+          <span>
+            Quản lý danh mục
+          </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="link" href="/">
+          <span class="icon">
+            <i class="fa-solid fa-earth-americas"></i>
+          </span>
+          <span>
+            Truy cập website
+          </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="">
+          <span class="icon">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          </span>
+          <span>
+            Đăng
+            xuất
+          </span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+
+</div>
+
+<script>
+  $(document).ready(function () {
+    
+    $('.nav-item.dropdown ').each(function () {
+      $(this).find('a:first').click(function (e) {
+        e.preventDefault();
+        if ($('.sidebar').hasClass('collapsed')) {
+          $('.sidebar').removeClass('collapsed');
+          $('.main-content').removeClass('collapsed');
+        }
+        $(this).parent('.nav-item.dropdown').find('.subnav').toggle('open');
+      });
+    });
+
+    
+  })
+
+
+</script>

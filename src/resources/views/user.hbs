@@ -1,62 +1,9 @@
-{{!-- {{>navbarUser}} --}}
 <div class="user d-flex jc-center">
-    <div class="navbar-user">
-        <div class="box-info d-flex ai-center ">
-            <div class="user-avatar col-33">
-                <a href="" class="avatar">
-                    <img src="{{data.anh_dai_dien}}" alt="" width="">
-                </a>
-            </div>
-            <div class="user-info col-66">
-                <a href="" class="">{{data.ten_nguoi_dung}}</a>
-                <span class="user-point">{{data.diem_vip}} điểm</span>
-            </div>
-        </div>
-        <div class="box-balance ">
-            <div class="content">
-                <h5 class="desc-text">Số dư tài khoản</h5>
-                <div class="d-flex jc-between mt-12 mb-8">
-                    <span>TK Chính</span>
-                    <span>0</span>
-                </div>
-                <div class="d-flex jc-between mb-8">
-                    <span>TK Khuyến mãi</span>
-                    <span>0</span>
-                </div>
+    {{>navbarUser}}
 
-                <button class="btn btn-deposit pd--8-12 "><span>Nạp tiền</span></button>
-
-            </div>
-        </div>
-        <ul class="nav-list">
-            <li class="nav-item"><a href=""><i class="fa-solid fa-earth-americas"></i>Tổng quan</a></li>
-            <li class="nav-item"><a href=""><i class="fa-regular fa-address-card"></i>Quản lý tài
-                    khoản</a></li>
-            <li class="nav-item">
-                <a href=""><i class="fa-solid fa-list-check"></i>Quản lý tin đăng</a>
-                {{!-- <ul class="subnav">
-                    <li class="subnav-item">
-                        Đăng mới
-                    </li>
-                    <li class="subnav-item">
-                        Danh sách tin
-                    </li>
-                    <li class="subnav-item">
-                        Tin nháp
-                    </li>
-                </ul> --}}
-            </li>
-            <li class="nav-item"><a href=""><i class="fa-solid fa-clock-rotate-left"></i>Lịch sử xem
-                    tin</a></li>
-            {{!-- <li class="nav-item"><a href="">Tổng quan</a></li> --}}
-            <li class="nav-item"><a href=""><i class="fa-regular fa-credit-card"></i>Nạp điểm </a></li>
-            <li class="nav-item"><a href="" class="btn-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>Đăng
-                    xuất</a></li>
-        </ul>
-    </div>
     <div class="box-content container d-flex jc-center ">
-        <div class="col-75">
-            <div class="form ">
+        <div class="col-80">
+            <div class="form " >
                 <h2 class="title-text ">Quản lý tài khoản </h2>
 
                 <h3 class="heading-text mt-32">Thông tin cá nhân </h3>
@@ -122,6 +69,9 @@
                 </form>
 
             </div>
+
         </div>
     </div>
 </div>
+
+

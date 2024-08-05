@@ -1,0 +1,38 @@
+.pagination {
+    display: flex;
+    // background-color: #fff;
+    padding: 20px;
+
+    li {
+        margin: 0 4px;
+        list-style: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition-duration: 100ms;
+    }
+
+    .dots {
+        margin: 0 6px;
+        list-style: none;
+        background-color: transparent;
+        cursor: default;
+        padding: 15px 20px;
+        border-radius: 50px;
+        border: none;
+    }
+
+    .active {
+        background-color: #8bbef4;
+    }
+    a {
+        padding: 8px 10px;
+        border: 1px solid #8bbef4;
+        border-radius: 2px;
+    }
+    a.active span {
+        color: #fff;
+    }
+    span {
+        color: #8bbef4;
+    }
+}

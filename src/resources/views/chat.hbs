@@ -1,0 +1,39 @@
+<div class="chat d-flex jc-center">
+
+    <div class="container d-flex jc-center " {{#if data}} data-news="{{data.[0].ma_so_tt}}"
+         data-user="{{data.[0].ma_so_nd}}" {{/if}}>
+        <div class="col-30  chat-list">
+
+            <div class="search">
+                <input type="text" placeholder="Nhập ít nhất 3 ký tự để tìm kiếm" class="" name="searchItemChat">
+            </div>
+            <div class="list-chat">
+                {{#if data}}
+                {{#each data}}
+                <div class="d-flex item-chat  " data-user="{{this.ma_so_nd}}" data-news="{{this.ma_so_tt}}">
+                    <img src="{{this.anh_dai_dien}}" alt="" srcset="" class="">
+
+                    <div class="info-base pd--6-8">
+                        {{!-- <span class="span-text mt-12"> --}}
+                            <span class="name text">{{this.ten_nguoi_dung}}</span>
+                            {{!-- - 1ngay truoc</span> --}}
+                        <span class="span-text mt-8 text">{{this.tieu_de}}</span>
+                    </div>
+
+                    <img src="{{images.[0]}}" alt="" class="">
+
+                </div>
+                {{/each}}
+                {{else}}
+
+                {{/if}}
+            </div>
+
+        </div>
+        
+        {{>chatMain}}
+        
+
+    </div>
+</div>
+<script src="/javascript/chat.js"></script>

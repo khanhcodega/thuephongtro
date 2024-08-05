@@ -1,159 +1,257 @@
 <div id="" class="rental d-flex jc-center">
 
-    <section class="row mt-32 content-search">
-        <div class="container">
-            <div class="d-flex">
-                <div class="col-80 pd-h-12">
-                    <div class="re-content pd-h-12">
-                        <div class="">
-                            <a href="">Cho thuê</a>
-                            <span>/</span>
-                            <a href="">Hồ Chí Minh</a>
-                            <span>/</span>
-                            <a href="">Tất cả BĐS tại Hồ Chí Minh</a>
-                        </div>
-
-                        <span class="span-text mt-8"><i class="fa-solid fa-fire"></i> Có 795.872 lượt xem khu vực này
-                            trong 7
-                            ngày vừa
-                            qua.</span>
-                        <h1 class="mt-12">Cho thuê nhà đất tại Hồ Chí Minh</h1>
-                        <span class="mt-12 total">Hiện có 21.458 bất động sản.</span>
-                    </div>
-                    <div class="mt-16 d-flex jc-between navbar-control pd-h-12">
-                        <div class="d-flex navbar-control-item">
-                            <div class="btn pd--8-12 btn-sm active"><i class="fa-solid fa-bars"></i></div>
-                            <div class="btn pd--8-12 btn-sl"><i class="fa-solid fa-map-location-dot"></i></div>
-
-                        </div>
-
-                        <div class="btn w-4 btn-arrange pd--8-12">
-                            <span>Thông thường</span>
-                            <i class="fa-solid fa-angle-down"></i>
-                        </div>
-
+    <div class="container">
+        <div class="search-content col-66">
+            <div class="search-box ">
+                <input type="text" placeholder="Tìm nhanh . VD : Vinhomes Cental Park ..." class="pd--8-12"
+                       name="seachInput">
+                <div class="btn-search btn ">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Tìm kiếm</span>
+                </div>
+            </div>
+            <div class="btn btn-filter">
+                <i class="fa-solid fa-filter"></i>
+                <span>Lọc</span>
+            </div>
+        </div>
+        <div class="d-flex w-full">
+            <div class="col-66 pd-h-12">
+                <div class="re-content pd-h-12">
+                    <div class="">
+                        <a href="">Cho thuê</a>
+                        <span>/</span>
+                        <a href="">Hồ Chí Minh</a>
+                        <span>/</span>
+                        <a href="">Tất cả BĐS tại Hồ Chí Minh</a>
                     </div>
 
-                    <div class="mt-12 item-content mb-32">
-                        <div class="d-flex  ">
-                            <div class="col-66 img">
-                                <img src="/img/house.png" alt="" class="w-full bd-l">
-                            </div>
-                            <div class="col-33 img">
-                                <div class="img2">
-                                    <img src="/img/house.png" alt="" class="w-full bd-r">
-                                </div>
-                                <div class="col-100 d-flex img2">
-                                    <img src="/img/house.png" alt="" class="w-2">
-                                    <img src="/img/house.png" alt="" class="w-2">
-                                </div>
-                            </div>
+                    {{!-- <span class="span-text mt-8"><i class="fa-solid fa-fire"></i> Có 795.872 lượt xem khu vực này
+                        trong 7
+                        ngày vừa
+                        qua.</span> --}}
+                    <h1 class="mt-12">Cho thuê nhà đất tại Hồ Chí Minh</h1>
+                    <span class="mt-12 total">Hiện có 21.458 bất động sản.</span>
+                </div>
+                <div class="mt-16 d-flex jc-between navbar-control pd-h-12">
+                    <div class="d-flex navbar-control-item">
+                        <a class="btn pd--8-12 btn-sm active" href="/nha-cho-thue"><i class="fa-solid fa-bars"></i></a>
+                        <a class="btn pd--8-12 btn-sl" href="/nha-cho-thue/map"><i
+                               class="fa-solid fa-map-location-dot"></i></a>
 
-                        </div>
-                        <div class="boder">
+                    </div>
 
-                            <div class="mt-12 pd-h-12 mb-16">
-                                <span class="title-text">
-                                    Đừng bỏ qua tin này nếu bạn đang muốn thuê căn hộ ở Quận1 Vinhomes Golden River
-                                    BaSon.LH 0899 303 ***
-                                </span>
-                                <div class="mt-12">
-                                    <span class=" red-text">18 triệu/tháng
-                                    </span>
-                                    <span class=" red-text pd-h-12">·</span>
-                                    <span class=" red-text">85 m²
-                                    </span>
-                                    <span class="gray-text pd-h-12">·</span>
-                                    <span class="gray-text">2 <i class="fa-solid fa-bed"></i></span>
-                                    <span class="gray-text pd-h-12">·</span>
-                                    <span class="gray-text">2 <i class="fa-solid fa-bath"></i></span>
-                                    <span class="gray-text pd-h-12">·</span>
-                                    <span class="gray-text"> Quận 1, Hồ Chí Minh</span>
-                                </div>
-                                <span class="text mt-8 gray-text">
-                                    Chuyên cho thuê các căn hộ ở Vinhomes Ba Son nội thất cơ bản và full nội thất, các
-                                    căn hộ thiết kế sang trọng, hiện đại. Giỏ hàng giá tốt và đa dạng không đâu có do
-                                    chính chủ kí gửi với mức giá tốt nhất, hỗ trợ sau mùa dịch!
-                                </span>
+                    <div class="btn  btn-arrange pd--8-12">
+                        <span>Thông thường</span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
 
+                </div>
+
+                <div class="data contentWrapper">
+                    {{#each data}}
+                    <div class="mt-12 item-content mb-32" data-news="{{this.ma_so}}" data-da-like="{{this.da_like}}">
+                        <a class="d-flex btn-preview" href="/nha-cho-thue/{{this.ma_so}}">
+                            <div class=" img main-img ">
+                                <img src="{{firstFourImages.[0]}}" alt="{{firstFourImages.[0]}}" class="w-full bd-l">
                             </div>
-                            <div class="d-flex jc-between pd--14-16 user-content ">
-                                <div class="d-flex info-user ai-center">
-                                    <img src="/img/house.png" alt="" width="40" height="40" class="avatar mr-8 ">
-                                    <div>
-                                        <span class="span-text">Nguyễn Trung Đức</span>
-                                        <span class="span-text">Đăng hôm qua</span>
+                            <div class=" img right-images">
+                                <div class="img2 top-right">
+
+                                    <img src="{{#if firstFourImages.[1]}}{{firstFourImages.[1]}}{{else}}{{firstFourImages.[0]}}{{/if}}"
+                                         alt="{{firstFourImages.[1]}}" class="w-full bd-r">
+                                </div>
+                                <div class="img2 bottom-right">
+                                    <div class="col-50 img2">
+                                        <img src="{{#if firstFourImages.[2]}}{{firstFourImages.[2]}}{{else}}{{firstFourImages.[0]}}{{/if}}" alt="{{firstFourImages.[2]}}"
+                                             class="w-full bd-r bd-b">
+                                    </div>
+                                    <div class="col-50 img2">
+                                        <img src="{{#if firstFourImages.[3]}}{{firstFourImages.[3]}}{{else}}{{firstFourImages.[0]}}{{/if}}" alt="{{firstFourImages.[3]}}"
+                                             class="w-full bd-b">
                                     </div>
                                 </div>
-                                <div class="d-flex ai-center">
+                            </div>
+                        </a>
+
+                        <div class="boder">
+                            <a href="/nha-cho-thue/{{this.ma_so}}" class=" btn-preview">
+                                <div class="mt-12 pd-h-12 mb-16">
+                                    <span class="title-text">
+                                        {{this.tieu_de}}
+                                    </span>
+                                    <div class="mt-12">
+                                        <span class="red-text price">
+                                            {{#if this.formattedPrice}}
+                                            {{this.formattedPrice}} triệu/tháng
+                                            {{else}}
+                                            Giá thỏa thuận
+                                            {{/if}}
+                                        </span>
+                                        <span class="red-text pd-h-12 price-separator">·</span>
+                                        <span class="red-text area">{{this.dien_tich}} m²</span>
+                                        <span class="gray-text pd-h-12 area-separator">·</span>
+                                        <span class="gray-text bedroom">{{this.bedroom}} <i
+                                               class="fa-solid fa-bed"></i></span>
+                                        <span class="gray-text pd-h-12 bedroom-separator">·</span>
+                                        <span class="gray-text toilet">{{this.toilet}} <i
+                                               class="fa-solid fa-bath"></i></span>
+                                        <span class="gray-text pd-h-12 toilet-separator">·</span>
+                                        <span class="gray-text location">{{this.ten_quan_huyen}},
+                                            {{this.ten_thanh_pho}}</span>
+                                    </div>
+                                    <span class="text mt-8 gray-text">
+                                        {{{this.noi_dung}}}
+                                    </span>
+
+                                </div>
+                            </a>
+
+                            <div class="d-flex jc-between pd--14-16 user-content ">
+                                <div class="d-flex info-user ai-center col-50 mt-8">
+                                    <img src="{{this.anh_dai_dien}}" alt="" class="avatar mr-8 ">
+                                    <div>
+                                        <span class="span-text">{{this.ten_nguoi_dung}}</span>
+                                        <span class="span-text">Đăng {{this.ngay_tao}}</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex ai-center col-50 mt-8 contact">
                                     <div class="btn-phone btn pd--8-12 mr-8">
                                         <i class="fa-solid fa-phone-volume"></i>
-                                        <span>0923645837</span>
-                                        <span class="">·</span>
-                                        <span>Hiện số</span>
+                                        <span>{{this.so_dien_thoai}}</span>
+                                        {{!-- <span class="">·</span>
+                                        <span>Hiện số</span> --}}
                                     </div>
                                     <div class="btn btn-like">
+                                        {{#if this.da_like}}
+                                        <i class="fa-solid fa-heart"></i>
+                                        {{else}}
                                         <i class="fa-regular fa-heart"></i>
+                                        {{/if}}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {{else}}
+                    <div class="item-content mt-12">
+                        <span colspan="5" class="text-center">
+                            Không có tin phù hợp.
+                        </span>
+                    </div>
+                    {{/each}}
+                    <div class="d-flex jc-center mt-24 mb-32">
 
+                        <ul class="pagination" data-currentpage="{{pagination.currentPage}}"
+                            data-totalpage="{{pagination.totalPages}}">
+
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="col-20 pd-h-12 ">
-                    <span>Lọc theo giá</span>
-                    <ul>
-                        <li>Thỏa thuận</li>
-                        <li>Dưới 1 triệu</li>
-                        <li>1- 3 triệu</li>
-                        <li>3- 5 triệu</li>
-                        <li>5- 10 triệu</li>
-                        <li>10- 15 triệu</li>
-                        <li>Trên 15 triệu</li>
-                    </ul>
-
-                    <span>Lọc theo diện tích</span>
-                    <ul>
-                        <li>Dưới 20 m<sub>2</sub></li>
-                        <li>Từ 20 - 30 m<sub>2</sub></li>
-                        <li>Từ 30 - 50 m<sub>2</sub></li>
-                        <li>Từ 50 - 70 m<sub>2</sub></li>
-                        <li>Từ 70 - 100 m<sub>2</sub></li>
-                        <li>Trên 100 m<sub>2</sub></li>
-                    </ul>
-
-                    <span>Lọc theo khu vực</span>
-                    <ul>
-                        <li>Quận 1</li>
-                        <li>Quận 1</li>
-                        <li>Quận 1</li>
-                        <li>Quận 1</li>
-                        <li>Quận 1</li>
-                        <li>Quận 1</li>
-                        <li>Quận 1</li>
-
-                    </ul>
-                    <span>Lọc theo danh mục cho thuê</span>
-                    <ul>
-                        <li>Tất cả</li>
-                        <li>Cho thuê nguyên căn</li>
-                        <li>Cho thuê căn hộ</li>
-                        <li>Cho thuê căn hộ mini</li>
-                        <li>Cho thuê căn hộ dịch vụ</li>
-                        <li>Cho thuê mặt bằng</li>
-                        <li>Tìm người ở ghép</li>
-
-
-                    </ul>
-                </div>
 
             </div>
 
+            <div class="col-33 pd-h-12 box-filter">
+                <div class="content">
+                    <div class="box-item all">
+                        <ul>
+                            <li class="btn-save">Lưu</li>
+                            <li class="btn-reset">Làm mới</li>
+                        </ul>
+                    </div>
+                    <div class="box-item price">
+                        <span class="span-text">Lọc theo giá</span>
+                        <ul>
+                            <li data-max="0">Thỏa thuận</li>
+                            <li data-max="1">Dưới 1 triệu</li>
+                            <li data-min="1" data-max="3">1- 3 triệu</li>
+                            <li data-min="3" data-max="5">3- 5 triệu</li>
+                            <li data-min="5" data-max="10">5- 10 triệu</li>
+                            <li data-min="10" data-max="15">10- 15 triệu</li>
+                            <li data-min="1">Trên 15 triệu</li>
+                        </ul>
+                    </div>
+
+                    <div class="box-item area">
+
+                        <span class="span-text">Lọc theo diện tích</span>
+                        <ul>
+                            <li>Tất cả</li>
+                            <li data-max="20">Dưới 20 m<sub>2</sub></li>
+                            <li data-min="20" data-max="30">Từ 20 - 30 m<sub>2</sub></li>
+                            <li data-min="30" data-max="50">Từ 30 - 50 m<sub>2</sub></li>
+                            <li data-min="50" data-max="70">Từ 50 - 70 m<sub>2</sub></li>
+                            <li data-min="70" data-max="100">Từ 70 - 100 m<sub>2</sub></li>
+                            <li data-min="100">Trên 100 m<sub>2</sub></li>
+                        </ul>
+                    </div>
+
+                    <div class="box-item district">
+
+                        <span class="span-text">Lọc theo khu vực</span>
+                        <ul>
+                            <li>Tất cả</li>
+                            {{#each diaLyData}}
+
+                            <li data-id="{{this.ma_so}}">{{this.ten_quan_huyen}}</li>
+                            {{/each}}
+
+                        </ul>
+                    </div>
+
+                    <div class="box-item category">
+                        <span class="span-text">Lọc theo danh mục cho thuê</span>
+                        <ul>
+                            <li>Tất cả</li>
+                            {{#each chuyenmucData}}
+                            <li data-id="{{this.ma_so}}">{{this.ten_chuyen_muc}}</li>
+
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
         </div>
-    </section>
 
-
+    </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('.btn-filter').click(function () {
+            $('.box-filter').addClass('open');
+        });
+        $('.box-filter').click(function (e) {
+
+            if ($(this).hasClass('open')) {
+                $('.box-filter').removeClass('open');
+            }
+        });
+        $('.box-filter .content li.btn-save').click(function (e) {
+
+            $('.box-filter').removeClass('open');
+        });
+        $('.box-filter .content').click(function (e) {
+            e.stopPropagation()
+        });
+
+        $('.btn-sl').click(function (e) {
+            e.preventDefault()
+            const url = $(this).attr('href')
+            console.log(url)
+            fetch(url)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then((html) => {
+                    $('.rental .data').html(html);
+                })
+                .catch((error) => { });
+        })
+    });
+</script>

@@ -1,0 +1,84 @@
+<div class="user d-flex jc-center">
+    {{>navbarUser}}
+
+    <div class="box-content container d-flex jc-center ">
+        <div class="col-80">
+            <div class="mt-16">
+                {{!-- <h2> Tin đăng đã xem </h2> --}}
+                <h3 class="title-text   mt-16">Danh sách tin tức yêu thích</h3>
+
+                <div class="mt-16 contentWrapper">
+
+                    {{#each data}}
+                    <a class="item d-flex item-content" href="/nha-cho-thue/{{this.ma_so_tin_tuc}} "
+                       data-news="{{this.ma_so_tin_tuc}}" data-da-like="{{this.da_like}}">
+                        <img src="{{images.[0]}}" alt="">
+                        <div class="item-container ">
+                            <span class="span-text dark-text">{{this.tieu_de}}</span>
+                            <span class="span-text gray-text">{{this.dien_tich}} m²- {{this.floor}} Tầng-
+                                {{this.bedroom}}PN</span>
+                            <span class="span-text red-text bolder">{{#if this.formattedPrice}}
+                                {{this.formattedPrice}} triệu/tháng
+                                {{else}}
+                                Giá thỏa thuận
+                                {{/if}}</span>
+                            <span class="span-text gray-text">{{this.ten_nguoi_dung}} · {{this.ngay_tao}} · Quận
+                                {{this.ten_quan_huyen}}</span>
+                        </div>
+                        <div class="action d-flex ">
+                            <div class="btn btn-chat mr-8" href="/chat/get-chat?idNews={{this.ma_so_tin_tuc}}">
+                                <i class="fa-regular fa-message"></i>
+
+                                <span>Chat</span>
+                            </div>
+                            <div class="btn btn-like  ">
+                                {{#if this.da_like}}
+                                <i class="fa-solid fa-heart"></i>
+                                {{else}}
+                                <i class="fa-regular fa-heart"></i>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </a>
+                    {{else}}
+                    <div class="item-content mt-12">
+                        <span colspan="5" class="text-center">
+                            Bạn chưa lưu tin nào.
+                        </span>
+                        <a href="/nha-cho-thue"><span>Xem thêm tin. </span></a>
+
+                    </div>
+                    {{/each}}
+
+                    <div class="d-flex jc-center mt-24 mb-32">
+
+                        <ul class="pagination" data-currentpage="{{pagination.currentPage}}"
+                            data-totalpage="{{pagination.totalPages}}">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.action .btn-chat').each(function () {
+        $(this).on('click', function (event) {
+            event.stopPropagation();
+            event.preventDefault();
+            const url = $(this).attr('href');
+            window.location.href = url;
+        });
+    });
+
+
+
+    document.querySelectorAll('.item').forEach(item => {
+        item.addEventListener('click', function (event) {
+            if (!event.target.closest('.btn')) {
+                window.location.href = this.href;
+            }
+        });
+    });
+</script>

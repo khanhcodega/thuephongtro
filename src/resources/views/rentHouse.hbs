@@ -1,0 +1,318 @@
+<div class="new-details d-flex jc-center">
+    <div class="container mt-16 ">
+
+        <div class="current-new d-flex">
+            <div class="content col-66 item-content" data-news="{{data.ma_so}}" data-da-like="{{data.da_like}}">
+
+                <div class="images-news">
+                    <div class="image-current">
+
+                        {{#if data.video}}
+                        <video id="main-video" controls>
+                            <source src="{{data.video}}" type="video/mp4">
+                        </video>
+                        <img src="{{images.[0]}}" alt="" id="main-image" hidden>
+                        {{else}}
+                        <img src="{{images.[0]}}" alt="" id="main-image">
+                        {{/if}}
+                    </div>
+                    <div class="image-review ">
+                        <div class=" d-flex jc-arrow owl-carousel">
+                            {{#if data.video}}
+                            <div class="item">
+                                <video class="carousel-video" src="{{data.video}}" type="video/mp4"></video>
+                            </div>
+                            {{/if}}
+                            {{#each images}}
+                            <div class="item">
+                                <img src="{{this}}" alt="" class="carousel-image">
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+                <div class="heading">
+                    <span class="span-text  mt-16">Cho thuê/ {{diaLyData.ten_thanh_pho}}/ {{diaLyData.ten_quan_huyen}}/
+                        <span class="dark-text">Nhà trọ, phòng trọ tại {{sonha}}</span>
+                    </span>
+                    <h2 class="title-text mt-12">{{data.tieu_de}}</h2>
+                    <span class="span-text  mt-12">Cho thuê/ {{diaLyData.ten_thanh_pho}}/ {{diaLyData.ten_quan_huyen}}/
+                        <span class="dark-text">Nhà trọ, phòng trọ tại {{sonha}}</span></span>
+                </div>
+
+                <div class="info-base d-flex jc-between mt-16">
+                    {{!-- <div class="description d-flex"> --}}
+                        <div class="item col-25">
+                            <span class="span-text">Mức giá</span>
+                            <span class="desc-text">
+                                {{#if this.formattedPrice}}
+                                {{this.formattedPrice}} triệu/tháng
+                                {{else}}
+                                Giá thỏa thuận
+                                {{/if}}
+                            </span>
+                        </div>
+                        <div class="item col-25">
+                            <span class="span-text">Diện tích</span>
+                            <span class="desc-text">{{data.dien_tich}} m²
+                            </span>
+                        </div>
+                        <div class="item col-25">
+                            <span class="span-text">Phòng ngủ</span>
+                            <span class="desc-text">{{noiDungThem.bedroom}} Phòng ngủ
+                            </span>
+                        </div>
+
+
+                        <div class="action d-flex ai-center col-25">
+                            <div class="btn btn-share">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </div>
+                            <div class="btn btn-warning">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <div class="btn btn-like">
+                                {{#if data.da_like}}
+                                <i class="fa-solid fa-heart"></i>
+                                {{else}}
+                                <i class="fa-regular fa-heart"></i>
+                                {{/if}}
+                            </div>
+                        </div>
+                        {{!--
+                    </div> --}}
+                </div>
+                <div class="desc-details">
+                    <h3 class="heading-text">Thông tin mô tả</h3>
+                    <div class="content mt-12">
+
+                        {{{noi_dung}}}
+
+                    </div>
+                    <div class="contact mt-12">
+
+                        {{!-- <i class="fa-solid fa-phone-volume"></i> --}}
+                        <span>Liên hệ: </span>
+                        <span>{{data.so_dien_thoai}}</span>
+                        <span class="">·</span>
+                        <button class="btn-phone btn pd--8-12 mr-8"> Hiện số</button>
+
+                    </div>
+                </div>
+                <div class="features  ">
+                    <h3 class="heading-text">Đặc điểm phòng trọ</h3>
+                    <div class="d-flex">
+
+                        <div class="item col-50  d-flex ">
+                            <span class="span-text"><i class="fa-solid fa-expand"></i> Diện tích</span>
+                            <span class="span-text">{{data.dien_tich}} m²</span>
+                        </div>
+                        <div class="item col-50  d-flex ">
+
+                            <span class="span-text"><i class="fa-solid fa-money-check-dollar"></i> Mức giá</span>
+                            <span class="span-text"> {{#if formattedPrice}}
+                                {{formattedPrice}} triệu/tháng
+                                {{else}}
+                                Giá thỏa thuận
+                                {{/if}}</span>
+                        </div>
+                        <div class="item col-50  d-flex ">
+
+                            <span class="span-text"><i class="fa-solid fa-city"></i> Số tầng</span>
+                            <span class="span-text">{{noiDungThem.floor}} tầng</span>
+                        </div>
+                        <div class="item col-50  d-flex ">
+
+                            <span class="span-text"><i class="fa-solid fa-bed"></i> Số phòng ngủ</span>
+                            <span class="span-text">{{noiDungThem.bedroom}} phòng</span>
+                        </div>
+                        <div class="item col-50  d-flex ">
+
+                            <span class="span-text"><i class="fa-solid fa-bath"></i> Số toilet</span>
+                            <span class="span-text">{{noiDungThem.toilet}} phòng</span>
+                        </div>
+                        <div class="item col-50  d-flex ">
+
+                            <span class="span-text"><i class="fa-solid fa-expand"></i> Nội thất</span>
+                            <span class="span-text">{{noiDungThem.interior}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="map" data-map="{{data.dia_chi_cu_the}}">
+                    <div id="mapContainer"></div>
+                </div>
+
+                <div class="feedback  ">
+                    <h3 class="heading-text">Đánh giá bài viết</h3>
+                    {{!-- <form id="rating-form" class="d-flex flex-column pd--14-16">
+                        <div class="d-flex align-items-center mb-10">
+                            <label for="username" class="mr-8">Tên người dùng:</label>
+                            <input type="text" id="username" name="username" required class="form-control"
+                                   placeholder="Nhập tên của bạn">
+                        </div>
+
+                        <div class="d-flex align-items-center mb-10">
+                            <label for="rating" class="mr-8">Điểm đánh giá:</label>
+                            <div id="rating" class="d-flex">
+                                <!-- Stars rating system -->
+                                <input type="radio" id="star5" name="rating" value="5"><label for="star5"
+                                       class="star">&#9733;</label>
+                                <input type="radio" id="star4" name="rating" value="4"><label for="star4"
+                                       class="star">&#9733;</label>
+                                <input type="radio" id="star3" name="rating" value="3"><label for="star3"
+                                       class="star">&#9733;</label>
+                                <input type="radio" id="star2" name="rating" value="2"><label for="star2"
+                                       class="star">&#9733;</label>
+                                <input type="radio" id="star1" name="rating" value="1"><label for="star1"
+                                       class="star">&#9733;</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-10">
+                            <label for="comment">Bình luận:</label>
+                            <textarea id="comment" name="comment" rows="4" required class="form-control"
+                                      placeholder="Nhập bình luận của bạn"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Gửi đánh giá</button>
+                    </form> --}}
+                    <div class="d-flex jc-between pd--14-16 user-content ">
+                        {{#each feedbackResult}}
+                        <div class="d-flex feedback-user col-100">
+                            <img src="{{this.anh_dai_dien}}" alt="" width="40" height="40" class="avatar mr-8 ">
+                            <div>
+                                <span class="span-text">{{this.ten_nguoi_dung}}</span>
+                                <span class="span-text star">
+                                    {{renderStars this.diem_danh_gia}}</span>
+                                <span class="span-text">Ngày đánh giá - {{this.ngay_tao}}</span>
+                                <span class="span-text comment">{{this.binh_luan}}</span>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="user-post col-33">
+                <div class="d-flex jc-between  user-content  ">
+                    <div class="d-flex info-user ai-center col-100">
+                        <img src="{{data.anh_dai_dien}}" alt="" width="40" height="40" class="avatar mr-8 ">
+                        <div>
+                            <span class="span-text name">{{data.ten_nguoi_dung}}</span>
+                            <span class="span-text">Đã truy cập hôm qua</span>
+                        </div>
+                    </div>
+                    <div class="col-100 contact-user">
+                        <h3 class="heading-text">Liên hệ </h3>
+                        <div class="mt-12 jc-arrow">
+                            <a class="btn-phone btn  mr-8 d-flex ai-center jc-between"
+                               href="tel:{{data.so_dien_thoai}}">
+                                <div class="d-flex">
+
+                                    <span class="span-text">
+
+                                        <i class="fa-solid fa-phone-volume"></i>
+                                    </span>
+                                </div>
+                                <span class="span-text">{{data.so_dien_thoai}}</span>
+                                {{!-- <span class="span-text">Hiện số</span> --}}
+                            </a>
+
+                            <a class="btn-mail btn  mr-8 d-flex ai-center jc-between"
+                               href="/chat/get-chat?idNews={{data.ma_so}}">
+                                <div class="d-flex">
+
+                                    <span class="span-text">
+
+                                        <i class="fa-regular fa-message"></i>
+                                    </span>
+
+                                </div>
+                                <span class="span-text">Chat với người
+                                    bán</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div></div>
+        <section class="row mt-32  mb-32 content-posts">
+            <div class="container">
+                <div class="d-flex jc-between mt-16  ">
+                    <h3 class="pd--8-12 ">Tin liên quan</h3>
+
+                </div>
+                <div class="d-flex list-posts">
+                    {{#each dataPosts}}
+                    <a href="/nha-cho-thue/{{this.ma_so}}" class="col-25 pd--8-12">
+                        <div class="post-item item-content" data-news="{{this.ma_so}}" data-da-like="{{this.da_like}}">
+                            <img src="{{firstFourImages.[0]}}" alt="" class="w-full">
+                            <div class="pd--8-12 mt-8">
+                                <h3 class="desc-text text">{{this.tieu_de}}
+                                </h3>
+                                <div class="d-flex  ai-center jc-between mt-12">
+                                    <span class=" price">
+                                        {{#if this.formattedPrice}}
+                                        {{this.formattedPrice}} triệu/tháng
+                                        {{else}}
+                                        Giá thỏa thuận
+                                        {{/if}}
+                                    </span>
+                                    <span class=" acreage">{{this.dien_tich}} m²</span>
+                                </div>
+                                <span class=" location mt-12"><i class="fa-solid fa-location-dot"></i>
+                                    {{this.ten_quan_huyen}} , {{this.ten_thanh_pho}}</span>
+                                <div class="d-flex ai-center jc-between mt-12 mb-8">
+                                    <span class=" .span-text">{{this.ngay_tao}}</span>
+                                    <div class="btn btn-like">{{#if this.da_like}}
+                                        <i class="fa-solid fa-heart"></i>
+                                        {{else}}
+                                        <i class="fa-regular fa-heart"></i>
+                                        {{/if}}</i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {{else}}
+                    <div class="item-content mt-12 text-center">
+                        <span colspan="5" class="">
+                            Không có tin phù hợp.
+                        </span>
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="text-center mt-32">
+                    <a href="/nha-cho-thue" class="btn btn-sm ">Xem thêm</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<script>
+    window.addEventListener('scroll', function () {
+        const userContent = document.querySelector('.user-post .user-content');
+        const parent = userContent.parentElement;
+
+        // Chiều cao của phần tử cha
+        const parentHeight = parent.offsetHeight;
+        console.log(parentHeight)
+
+        // Vị trí cuộn
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Chiều cao của cửa sổ
+        const windowHeight = window.innerHeight;
+
+        // Tính toán giá trị top
+        const topValue = Math.min(scrollTop, parentHeight - windowHeight);
+
+        // Cập nhật thuộc tính top
+        userContent.style.top = `${topValue}px`;
+    });
+
+
+</script>
+<script src="/javascript/map.js"></script>
